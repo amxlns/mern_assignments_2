@@ -1,88 +1,117 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Task 11</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
-    <style>
-        .container {
-            width: 40%;
-            padding-top: 50px;
-            padding-right: 15px;
-            padding-left: 15px;
-            margin-right: auto;
-            margin-left: auto;
-        }
-        *, ::after, ::before {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.5;
-            color: #212529;
-            text-align: left;
-            background-color: #fff;
-        }
-
-        .form-label
-        {
-            text-align: left;
-            padding-right: 15px;       
-        }
-
-        .btn
-        {
-            width:100%;
-        }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-        <form class="row g-3 needs-validation" novalidate>
-
-            <h1>INSTAGRAM</h1>
-            <div class="col-md-12">
-                <div class="input-group">
-                    <span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-person-fill"></i></span>
-                    <input type="text" class="form-control col-md-10" id="firstname" placeholder="Username" required>
-                    <div class="col-md-12"></div>
-                    <div class="valid-feedback col-md-10">
-                        Looks good!
-                    </div>
-                    <div class="invalid-feedback">
-                        Please supply your first name
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-12">
-                <div class="input-group">
-                    <span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-person-fill"></i></span>
-                    <input type="password" class="form-control" id="lastname"  placeholder="Password" required>
-                    <div class="valid-feedback">
-                      Looks good!
-                    </div>
-                    <div class="invalid-feedback">
-                        Please supply your last name
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-12">
-              <button class="btn text-light bg-primary" type="submit">Log in</button>
-            </div>
-          </form>
-    </div>
-    <script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task 10</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <style>
+            .container {
+                width: 60%;
+                padding-top: 50px;
+                padding-right: 15px;
+                padding-left: 15px;
+                margin-right: auto;
+                margin-left: auto;
+            }
+            *, ::after, ::before {
+                box-sizing: border-box;
+            }
+    
+            body {
+                margin: 20px;
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5;
+                color: #212529;
+                text-align: left;
+                background-color: #fff;
+            }
+    
+            .form-label
+            {
+                text-align: left;
+                padding-right: 15px;       
+            }
+        </style>
         
-    </script>
-  </body>
+    </head>
+
+    <body>
+        <form name = "myForm" onsubmit= "return validate()">
+            <table cellspacing = "2" cellpadding = "2" border = "0">
+               
+               <tr>
+                  <td align = "right">Name:</td>
+                  <td><input id ="nameinp" type = "text" name = "Name" /></td>
+                  <td id="nameval"></td>
+               </tr>
+               
+               <tr>
+                  <td align = "right">Email:</td>
+                  <td><input id="emailinp" type = "email" name = "EMail" /></td>
+                  <td id="emailval"></td>
+               </tr>
+               
+               <tr>
+                  <td align = "right">Website:</td>
+                  <td><input input="webinput" type = "text" name = "Web" /></td>
+                  <td id="websiteval"></td>
+               </tr>
+               
+               <tr>
+                  <td align = "right">Message:</td>
+                  <td>
+                     <textarea id="textareainp">
+
+                     </textarea>
+                  </td>
+                  <td id="textareaval"></td>
+               </tr>
+               
+               <tr>
+                <td align = "right"></td>
+                <td><input type = "submit" value = "Submit" /></td>
+             </tr>
+            </table>
+         </form>      
+         <script>
+            function validate()
+            {
+
+                var namevar = document.getElementById("nameinp").value; 
+                if(namevar.length == 0)
+                {
+                    document.getElementById("nameval").innerText = "This field is required";
+                    return false;
+                }
+
+                var emailvar = document.getElementById("emailinp").value; 
+                if(emailvar.length == 0)
+                {
+                    document.getElementById("emailval").innerText = "A valid email address is required";
+                    return false;
+
+                }
+
+                var websitevar = document.getElementById("webinput").value;
+                if(websitevar.length == 0)
+                {
+                    document.getElementById("websiteval").innerText = "A valid URL is required";
+                    return false;
+
+                } 
+
+                var textareavar = document.getElementById("textareainp"); 
+                if(textareavar.length == 0)
+                {
+                    document.getElementById("textareaval").innerText = "This field is required";
+                    return false;
+
+                }                
+            }
+
+        </script>    
+    </body>
 </html>

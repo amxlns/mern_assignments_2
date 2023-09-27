@@ -5,36 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Task 9</title>
+    <title>Task 8</title>
   </head>
   <body>
-
-    <button onclick="showTime()">show date</button>
-    <p id="1"></p>
-
-    <button onclick="showdate()">show Time</button>
-    <p id="2"></p>
-
+    <p>First Number:            <input type="text" id="i1" placeholder="Enter first number"/></p>
+    <p>Second Number:           <input type="text" id="i2" placeholder="Enter second number"/></p>
+    
+    <button onclick="multiply()">Multiply</button>
+    <button onclick="divide()">Divide</button>
+    <p>The result is:</p>
+    <p id="i3"></p>
 
     <script>
         
-        function showTime()
+        function multiply()
         {
-            const date = new Date();
-            const m = date.toLocaleString('default', { month: 'long' });
-            const d = date.getDate();
-            const year = date.getFullYear();
-            document.getElementById("1").innerHTML = d+"/"+m+"/"+year;
-
+            var i1 = document.getElementById("i1").value; //"2"
+            var i2 = document.getElementById("i2").value; //"4"
+            var a = Number.parseInt(i1); //2
+            var b = Number.parseInt(i2); //4
+            var prod = a*b;
+            document.getElementById("i3").innerHTML = prod;
         }
 
-        function showdate()
+        function divide()
         {
-            const d = new Date();
-            document.getElementById("2").innerHTML = d;
+            var i1 = document.getElementById("i1").value; //"2"
+            var i2 = document.getElementById("i2").value; //"4"
+            var a = Number.parseInt(i1); //2
+            var b = Number.parseInt(i2); //4
+            var quot = a/b;
+            document.getElementById("i3").innerHTML = quot;        
         }
-
-        
     </script>
   </body>
 </html>
