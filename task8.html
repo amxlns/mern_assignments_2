@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Task 8</title>
+  </head>
+  <body>
+    <p>First Number:            <input type="text" id="i1" placeholder="Enter first number"/></p>
+    <p>Second Number:           <input type="text" id="i2" placeholder="Enter second number"/></p>
+    
+    <button onclick="multiply()">Multiply</button>
+    <button onclick="divide()">Divide</button>
+    <p>The result is:</p>
+    <p id="i3"></p>
+
+    <script>
+        
+        function multiply()
+        {
+            var i1 = document.getElementById("i1").value; //"2"
+            var i2 = document.getElementById("i2").value; //"4"
+            var a = Number.parseInt(i1); //2
+            var b = Number.parseInt(i2); //4
+            var prod = a*b;
+            document.getElementById("i3").innerHTML = prod;
+        }
+
+        function divide()
+        {
+            var i1 = document.getElementById("i1").value; //"2"
+            var i2 = document.getElementById("i2").value; //"4"
+            var a = Number.parseInt(i1); //2
+            var b = Number.parseInt(i2); //4
+            var quot = a/b;
+            document.getElementById("i3").innerHTML = quot;        
+        }
+    </script>
+  </body>
+</html>
